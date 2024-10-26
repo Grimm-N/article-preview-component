@@ -9,7 +9,9 @@ body {
   font-size: 0.8125rem;
   font-family: "Manrope";
   font-weight: 500;
-  background-color: orange;
+  background-image: url(./images/bg1.jpg);
+  background-position: bottom;
+  background-size: cover;
 }
 body .article {
   display: flex;
@@ -46,7 +48,7 @@ body .article__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: right;
 }
 body .article__info {
   padding: 2.25rem 2rem 1.25rem;
@@ -106,7 +108,7 @@ body .article__info-author-btn .red-btn .icon-share path {
   fill: hsl(0, 0%, 100%);
 }
 body .article__info-author-btn .red-btn:hover .icon-share path {
-  fill: hsl(0, 94%, 25%);
+  fill: hsl(0, 0%, 0%);
 }
 body .article__info-author-btn .red-btn:hover, body .article__info-author-btn .red-btn:active {
   background-color: hsl(0, 0%, 100%);
@@ -141,7 +143,7 @@ body .article__info-author-btn-share:hover, body .article__info-author-btn-share
   background-color: hsl(0, 0%, 0%);
 }
 body .article__info-author-btn .icon-share path {
-  fill: hsl(0, 94%, 25%);
+  fill: hsl(0, 0%, 0%);
 }
 body .article__info-author-links {
   display: none;
@@ -152,7 +154,7 @@ body .article__info-author-links {
   right: 0;
   z-index: 20;
   width: 100%;
-  background-color: hsl(0, 0%, 0%);
+  background-color: hsl(0, 94%, 25%);
   width: 100%;
   padding: 1rem 2rem;
   opacity: 0;
@@ -182,7 +184,7 @@ body .article__info-author-links.show {
     transform: translateX(-50%);
     width: 2rem;
     height: 1rem;
-    background-color: hsl(0, 0%, 0%);
+    background-color: hsl(0, 94%, 25%);
     clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
   }
 }

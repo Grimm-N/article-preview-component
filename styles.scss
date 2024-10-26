@@ -4,6 +4,7 @@ $red-transparent: hsla(0, 94%, 25%, 0.25);
 $gray: hsl(220, 2%, 36%);
 $light-gray: hsl(0, 0%, 60%);
 $white: hsl(0, 0%, 100%);
+$white-transparent: hsla(0, 0%, 100%,0.5);
 $black: hsl(0, 0%, 0%);
 $normal: 500;
 $bold: 700;
@@ -20,7 +21,9 @@ body {
     font-size: 0.8125rem; //13px
     font-family: 'Manrope';
     font-weight: $normal;
-    background-color: orange;
+    background-image: url(./images/bg1.jpg);
+    background-position: bottom;
+    background-size: cover;
 
     .article {
         display: flex;
@@ -55,7 +58,7 @@ body {
                 width: 100%;
                 height: 100%;
                 object-fit: cover; 
-                object-position: center;
+                object-position: right;
             }
         }
 
@@ -125,7 +128,7 @@ body {
                         }
 
                         &:hover .icon-share path {
-                            fill: $red;
+                            fill: $black;
                         }
 
                         &:hover, &:active {
@@ -161,14 +164,14 @@ body {
                         &:hover .icon-share path, &.active .icon-share path {
                             fill: $white;
                         }
-                        
+
                         &:hover, &:active, &.active {
                             background-color: $black;
                         }
                     }
     
                     & .icon-share path {
-                        fill: $red;
+                        fill: $black;
                     }
                 }
 
@@ -181,7 +184,7 @@ body {
                     right: 0;
                     z-index: 20;
                     width: 100%;
-                    background-color: $black;
+                    background-color: $red;
                     width: 100%;
                     padding: 1rem 2rem;
                     opacity: 0;
@@ -211,7 +214,7 @@ body {
                             transform: translateX(-50%);
                             width: 2rem; 
                             height: 1rem; 
-                            background-color: $black; 
+                            background-color: $red; 
                             clip-path: polygon(0% 0%, 50% 100%, 100% 0%); 
                         }
                     }
