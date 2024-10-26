@@ -232,7 +232,7 @@ body .article__info-author-links-list a .social__icon path {
   fill: hsl(0, 0%, 100%);
 }
 body .article__info-author-links-list a:hover .social__icon path {
-  fill: hsl(0, 94%, 25%);
+  fill: hsl(0, 0%, 0%);
 }
 body footer {
   display: none;
