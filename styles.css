@@ -12,6 +12,7 @@ body {
   background-image: url(./images/bg.webp);
   background-position: bottom;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 body .article {
   display: flex;
