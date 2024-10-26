@@ -17,87 +17,135 @@ body .article {
   width: 100%;
   max-width: 20.5rem;
   height: 100%;
-  max-height: 31.5rem;
+  min-height: 32rem;
   border-radius: 0.6rem;
   background-color: hsl(0, 0%, 100%);
-  overflow: hidden;
   position: relative;
+  margin: 1rem;
+}
+@media (min-width: 48rem) {
+  body .article {
+    flex-direction: row;
+    max-width: 45.63rem;
+    min-height: 17.5rem;
+  }
 }
 body .article__image {
-  max-width: 20.5rem;
   height: 12.5rem;
-  background-color: hsl(0, 0%, 100%);
   overflow: hidden;
   border-radius: 0.6rem 0.6rem 0 0;
+}
+@media (min-width: 48rem) {
+  body .article__image {
+    height: auto;
+    width: 17.88rem;
+    border-radius: 0.6rem 0 0 0.6rem;
+  }
 }
 body .article__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: bottom;
+  object-position: center;
 }
 body .article__info {
-  padding: 0 1.875rem;
+  padding: 2.25rem 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 48rem) {
+  body .article__info {
+    max-width: 27.75rem;
+    padding: 2.2rem 2rem 1.25rem;
+  }
 }
 body .article__info-title {
   font-size: 1rem;
   color: hsl(0, 94%, 25%);
   font-weight: 700;
-  letter-spacing: 0.005rem;
-  margin-bottom: 0.8125rem;
+  margin-bottom: 0.75rem;
+}
+@media (min-width: 48rem) {
+  body .article__info-title {
+    font-size: 1.2rem;
+    line-height: 1.45;
+  }
 }
 body .article__info-text {
-  color: hsl(206, 6%, 25%);
+  color: hsl(220, 2%, 36%);
+  margin-bottom: 2rem;
 }
-body .article__author {
+@media (min-width: 48rem) {
+  body .article__info-text {
+    margin-bottom: 1.1rem;
+  }
+}
+body .article__info-author {
   display: flex;
   align-items: center;
-  padding: 0 1.875rem;
-  margin-bottom: 1.2rem;
-  margin-top: 1.87rem;
   width: 100%;
 }
-body .article__author-avatar {
+body .article__info-author-avatar {
   width: 2.5rem;
   height: auto;
   border-radius: 50%;
+  cursor: pointer;
 }
-body .article__author-info {
+body .article__info-author-data {
   flex-grow: 1;
   margin-left: 1rem;
 }
-body .article__author-info .author__name {
+body .article__info-author-data-name {
   font-weight: 700;
   color: hsl(0, 94%, 25%);
 }
-body .article__author-info .author__date {
-  color: hsl(206, 6%, 25%);
+body .article__info-author-data-when {
+  color: hsl(220, 2%, 36%);
 }
-body .article__author-btn {
-  margin-left: 1rem;
+body .article__info-author-btn .red-btn .icon-share path {
+  fill: hsl(0, 0%, 100%);
 }
-body .article__author-btn .article__share-btn {
+body .article__info-author-btn .red-btn:hover .icon-share path {
+  fill: hsl(0, 94%, 25%);
+}
+body .article__info-author-btn .red-btn:hover, body .article__info-author-btn .red-btn:active {
+  background-color: hsl(0, 0%, 100%);
+}
+@media (min-width: 48rem) {
+  body .article__info-author-btn .red-btn {
+    display: none;
+  }
+}
+body .article__info-author-btn-share {
   border: none;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background-color: hsl(0, 0%, 100%);
+  background-color: transparent;
   cursor: pointer;
 }
-body .article__author-btn .article__share-btn:hover, body .article__author-btn .article__share-btn:active {
-  background-color: hsl(0, 0%, 0%);
-}
-body .article__author-btn:hover .icon-share path {
+body .article__info-author-btn-share:hover .icon-share path {
   fill: hsl(0, 0%, 100%);
   background-color: hsl(0, 0%, 0%);
 }
-body .article__author-btn .icon-share path {
+body .article__info-author-btn-share:hover, body .article__info-author-btn-share:active {
+  background-color: hsl(0, 0%, 0%);
+}
+body .article__info-author-btn-share:active {
+  background-color: hsl(220, 2%, 36%);
+}
+body .article__info-author-btn-share:hover .icon-share path, body .article__info-author-btn-share.active .icon-share path {
+  fill: hsl(0, 0%, 100%);
+}
+body .article__info-author-btn-share:hover, body .article__info-author-btn-share:active, body .article__info-author-btn-share.active {
+  background-color: hsl(0, 0%, 0%);
+}
+body .article__info-author-btn .icon-share path {
   fill: hsl(0, 94%, 25%);
 }
-body .article__author .article__share-links {
+body .article__info-author-links {
   display: none;
   align-items: center;
-  text-align: center;
   justify-content: space-between;
   position: absolute;
   bottom: 0;
@@ -105,35 +153,82 @@ body .article__author .article__share-links {
   z-index: 20;
   width: 100%;
   background-color: hsl(0, 0%, 0%);
-  padding: 1rem 2rem;
   width: 100%;
-  border-radius: 0 0 0.5rem 0.5rem;
-  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-body .article__author .article__share-links p {
+@media (min-width: 48rem) {
+  body .article__info-author-links {
+    bottom: 5.8rem;
+    right: -4.4rem;
+    width: auto;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+  }
+}
+body .article__info-author-links.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (min-width: 48rem) {
+  body .article__info-author-links::after {
+    content: "";
+    position: absolute;
+    bottom: -0.9rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2rem;
+    height: 1rem;
+    background-color: hsl(0, 0%, 0%);
+    clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+  }
+}
+body .article__info-author-links-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+}
+@media (min-width: 48rem) {
+  body .article__info-author-links-list {
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+}
+body .article__info-author-links-list p {
   color: hsl(0, 0%, 100%);
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.2rem;
+  margin-right: 1.2rem;
 }
-body .article__author .article__share-links a {
+@media (min-width: 48rem) {
+  body .article__info-author-links-list p {
+    margin: 0;
+    letter-spacing: 0.3rem;
+  }
+}
+body .article__info-author-links-list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+@media (min-width: 48rem) {
+  body .article__info-author-links-list a {
+    margin: 0;
+  }
+}
+body .article__info-author-links-list a .social__icon {
   display: block;
 }
-body .article__author .article__share-links a .social__icon path {
+body .article__info-author-links-list a .social__icon path {
   fill: hsl(0, 0%, 100%);
 }
-body .article__author .article__share-links a:hover .social__icon path {
-  fill: hsl(0, 94%, 25%);
-}
-body .article__author .article__share-links-btn {
-  border: none;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background-color: hsl(0, 0%, 100%);
-  cursor: pointer;
-  margin-left: 2rem;
-}
-body .article__author .article__share-links-btn .icon-share path {
+body .article__info-author-links-list a:hover .social__icon path {
   fill: hsl(0, 94%, 25%);
 }
 body footer {
